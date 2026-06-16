@@ -90,7 +90,7 @@ export default function Home() {
     try {
       const res = await fetch(`/api/info?url=${encodeURIComponent(url)}`);
       const data = await res.json();
-      
+      console.dir(data, {depth: null})
       if (!res.ok) throw new Error(data.error || 'Failed to fetch');
       
       setInfo(data);
